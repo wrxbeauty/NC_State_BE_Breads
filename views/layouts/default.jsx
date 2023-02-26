@@ -12,7 +12,7 @@ function Default(html) {
       <body>
         <div className="wrapper">
           <header>
-            <h1><a href="/breads">BreadCRUD</a></h1>
+            <h1><a className="title" href="/breads">BreadCRUD</a></h1>
           </header>
           {/* <h1>HTML Rendered!</h1> */}
           <div id="asdf" className="container">

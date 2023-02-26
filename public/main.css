@@ -8,4 +8,7 @@ body {
     margin: auto;
   }
   
-  
+  .title {
+    text-align: center;
+    display: block;
+  }
