@@ -46,6 +46,7 @@ breads.post('/', (req, res) => {
 
 // Delete
 breads.delete('/:indexArray', (req, res) => {
+    console.log("Deleting Bread index: " + req.params.indexArray)
     Bread.splice(req.params.indexArray, 1)
     res.status(303).redirect('/breads')
   })
