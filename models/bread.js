@@ -14,12 +14,10 @@ const breadSchema = new Schema({
     }
 })
 
-// helper instance methods 
-breadSchema.methods.getBakedBy = function(){
-    return `${this.name} was baked with love by ${this.baker}`
+// HELPER METHODS 
+breadSchema.methods.getBakedBy = function() {
+    return `${this.name} was baked with love by ${this.baker.name}, who has been with us since ${this.baker.startDate.getFullYear()}`
   }  
-
-// helper static methods
 // breadSchema.statics.getBakedBy = function(){
 //     return this.find({ baker: { $eq: "Joey"} })
 // }  
