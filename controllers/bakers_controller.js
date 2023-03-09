@@ -19,10 +19,13 @@ baker.get('/', (req, res) => {
         })
 }) 
 
-// SHOW 
+// SHOW
 baker.get('/:id', (req, res) => {
     Baker.findById(req.params.id)
-        .populate('breads')
+        .populate({
+            path: 'breads',
+            options: { limit: 2 }
+        })
         .then(foundBaker => {
             res.render('bakerShow', {
                 baker: foundBaker
@@ -30,6 +33,13 @@ baker.get('/:id', (req, res) => {
         })
 })
 
-              
+// delete
+baker.delete('/:id', (req, res) => {
+    Baker.findByIdAndDelete(req.params.id) 
+      .then(deletedBaker => { 
+        res.status(303).redirect('/breads')
+      })
+})
+
 // EXPORT
 module.exports = baker                    
